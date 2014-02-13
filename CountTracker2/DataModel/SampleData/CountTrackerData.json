@@ -1,0 +1,129 @@
+{"Counters":[
+  {
+    "UniqueId"			: "786551BB-F05C-414F-998E-4A5D6B16FF12",
+    "Title"				: "Dag Tarief meter",
+	"Unit"				: "kWh",
+	"LastMeasurement"	: "2014-03-01 12:00:00",
+    "ImagePath"			: "Assets/CounterLogos/Counter1.png",
+    "Measurements"		:
+    [
+      {
+        "UniqueId"		: "2DEBBC46-0B7B-487A-9830-5FAF468B2AE0",
+		"MeasuredValue"	: "100",
+		"MeasuredDate"	: "2014-01-01 12:00:00"
+      },
+	  {
+        "UniqueId"		: "6EB36EFD-9065-421B-BEF5-9211D9492CFB",
+		"MeasuredValue"	: "110",
+		"MeasuredDate"	:"2014-02-01 12:00:00"
+      },
+      {
+        "UniqueId"		: "E5895148-CD8F-447F-AB33-AD976CE8711B",
+		"MeasuredValue"	: "115",
+		"MeasuredDate"	: "2014-03-01 12:00:00"
+      }
+    ]
+  },
+  {
+	"UniqueId"			: "1C9A27C6-A2B9-4B44-948A-9086AA095559",
+    "Title"				: "Nacht Tarief Meter",
+	"Unit"				: "Kwh",
+	"LastMeasurement"	: "2014-03-01 12:00:00",
+    "ImagePath"			: "Assets/CounterLogos/Counter1.png",
+    "Measurements"		:
+    [
+      {
+        "UniqueId"		: "9266B680-4C9B-43FD-BA12-A75666FDA547",
+		"MeasuredValue"	: "200",
+		"MeasuredDate"	: "2014-01-01 12:00:00"
+      },
+	   {
+        "UniqueId"		: "26D4C2A6-BAAE-4793-84C5-6C65C03536E9",
+		"MeasuredValue"	: "300",
+		"MeasuredDate"	: "2014-02-08 12:00:00"
+      },
+      {
+        "UniqueId"		: "CB7B3873-1DCF-4584-BF4F-1058FBD0E048",
+		"MeasuredValue"	: "400",
+		"MeasuredDate"	: "2014-03-01 12:00:00"
+      }
+    ]
+  },
+   {
+	"UniqueId"			: "F9A8D97F-4444-4188-AE6C-70EF16BE5F75",
+    "Title"				: "Watermeter",
+	"Unit"				: "Liter",
+	"LastMeasurement"	: "2014-03-05 12:00:00",
+    "ImagePath"			: "Assets/CounterLogos/Counter2.png",
+    "Measurements"		:
+    [
+      {
+        "UniqueId"		: "0313C8A0-F055-4E76-9962-CEB0B28BFE7B",
+		"MeasuredValue"	: "200",
+		"MeasuredDate"	: "2014-01-01 12:00:00"
+      },
+	   {
+        "UniqueId"		: "E3B37865-18A9-4B79-8E6B-E2787F049725",
+		"MeasuredValue"	: "300",
+		"MeasuredDate"	: "2014-02-01 12:00:00"
+      },
+      {
+        "UniqueId"		: "2B702C83-10DA-4559-9C7A-794EACFB63C7",
+		"MeasuredValue"	: "400",
+		"MeasuredDate"	: "2014-03-01 12:00:00"
+      }
+    ]
+  }  ,
+   {
+	"UniqueId"			: "9D19485D-9538-45BF-A0A8-071FFE7A9F5C",
+    "Title"				: "Zonnepanelen Garage",
+	"Unit"				: "Kwh",
+	"LastMeasurement"	: "2014-03-01 12:00:00",
+    "ImagePath"			: "Assets/CounterLogos/Counter3.png",
+    "Measurements"		:
+    [
+      {
+        "UniqueId"		: "0FE61BAB-7A46-4D5C-A7FE-7B7578EA7263",
+		"MeasuredValue"	: "200",
+		"MeasuredDate"	: "2014-01-01 12:00:00"
+      },
+	   {
+        "UniqueId"		: "E0DEA02A-E204-41C8-871E-9906623F8FA7",
+		"MeasuredValue"	: "300",
+		"MeasuredDate"	: "2014-02-01 12:00:00"
+      },
+      {
+        "UniqueId"		: "FA13D956-D9E2-4DC5-8582-B5631A096532",
+		"MeasuredValue"	: "400",
+		"MeasuredDate"	: "2014-03-01 12:00:00"
+      }
+    ]
+  }
+  ,
+   {
+	"UniqueId"			: "49E3CBDC-C320-4FE5-BE01-0006DD44F1D1",
+    "Title"				: "Zonnepanelen Dak",
+	"Unit"				: "Kwh",
+	"LastMeasurement"	: "2014-03-10 12:00:00",
+    "ImagePath"			: "Assets/CounterLogos/Counter3.png",
+    "Measurements"		:
+    [
+      {
+        "UniqueId"		: "EE1B6387-D043-41D3-B7DB-FC72AC89C4FD",
+		"MeasuredValue"	: "200",
+		"MeasuredDate"	: "2014-01-01 12:00:00"
+      },
+	   {
+        "UniqueId"		: "370D8133-65B2-4D2A-A5D2-5ED84FC69DF",
+		"MeasuredValue"	: "300",
+		"MeasuredDate"	: "2014-02-01 12:00:00"
+      },
+      {
+        "UniqueId"		: "6805AA88-6A14-4F8A-B442-238EC4EDE34F",
+		"MeasuredValue"	: "400",
+		"MeasuredDate"	: "2014-03-01 12:00:00"
+      }
+    ]
+  }
+]
+}

@@ -1,0 +1,124 @@
+﻿<Page x:Class="CountTracker2.GroupDetailPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:common="using:CountTracker2.Common"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:data="using:CountTracker2.Data"
+      xmlns:local="using:CountTracker2"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      x:Name="pageRoot"
+      DataContext="{Binding Main,
+                            Source={StaticResource Locator}}"
+      mc:Ignorable="d">
+
+    <Page.Resources />
+
+    <!--
+        This grid acts as a root panel for the page that defines two rows:
+        * Row 0 contains the back button and page title
+        * Row 1 contains the rest of the page layout
+    -->
+    <Grid Style="{StaticResource PageBackground}" d:DataContext="{Binding Counter}">
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition />
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--  Horizontal scrolling grid  -->
+
+        <GridView x:Name="itemGridView"
+                  Grid.RowSpan="2"
+                  AutomationProperties.AutomationId="ItemGridView"
+                  AutomationProperties.Name="Items In Group"
+                  IsItemClickEnabled="True"
+                  IsSwipeEnabled="false"
+                  ItemClick="ItemView_ItemClick"
+                  Padding="120,126,120,50"
+                  SelectionMode="None"
+                  TabIndex="1">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Width="480"
+                          Height="110"
+                          Margin="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Border Width="110"
+                                Height="110"
+                                Background="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}">
+                            <Image AutomationProperties.Name="{Binding Title}"
+                                   Source="{Binding ImagePath}"
+                                   Stretch="UniformToFill" />
+                        </Border>
+                        <StackPanel Grid.Column="1"
+                                    Margin="10,0,0,0"
+                                    VerticalAlignment="Top">
+                            <TextBlock Style="{StaticResource TitleTextBlockStyle}"
+                                       Text="{Binding Title}"
+                                       TextWrapping="NoWrap" />
+                            <TextBlock Style="{StaticResource CaptionTextBlockStyle}"
+                                       Text="{Binding LastInfo}"
+                                       TextWrapping="NoWrap" />
+                            <TextBlock MaxHeight="60"
+                                       Style="{StaticResource BodyTextBlockStyle}"
+                                       Text="{Binding Unit}" />
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+            <GridView.Header>
+                <StackPanel Width="480" Margin="0,4,14,0">
+                    <TextBlock MaxHeight="60"
+                               Margin="0,0,0,20"
+                               Style="{StaticResource SubheaderTextBlockStyle}"
+                               Text="{Binding Title}" />
+                    <Image Height="400"
+                           Margin="0,0,0,20"
+                           AutomationProperties.Name="{Binding Title}"
+                           Source="{Binding ImagePath}"
+                           Stretch="UniformToFill" />
+                    <TextBlock Margin="0,0,0,0"
+                               Style="{StaticResource BodyTextBlockStyle}"
+                               Text="{Binding LastInfo}" />
+                </StackPanel>
+            </GridView.Header>
+            <GridView.ItemContainerStyle>
+                <Style TargetType="FrameworkElement">
+                    <Setter Property="Margin" Value="52,0,0,2" />
+                </Style>
+            </GridView.ItemContainerStyle>
+        </GridView>
+
+        <!--  Back button and page title  -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="backButton"
+                    Margin="39,59,39,0"
+                    VerticalAlignment="Top"
+                    AutomationProperties.AutomationId="BackButton"
+                    AutomationProperties.ItemType="Navigation Button"
+                    AutomationProperties.Name="Back"
+                    Command="{Binding NavigationHelper.GoBackCommand,
+                                      ElementName=pageRoot}"
+                    Style="{StaticResource NavigationBackButtonNormalStyle}" />
+            <TextBlock x:Name="pageTitle"
+                       Grid.Column="1"
+                       Margin="0,0,30,40"
+                       VerticalAlignment="Bottom"
+                       IsHitTestVisible="false"
+                       Style="{StaticResource HeaderTextBlockStyle}"
+                       Text="{Binding Title}"
+                       TextWrapping="NoWrap" />
+        </Grid>
+    </Grid>
+</Page>

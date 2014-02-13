@@ -1,0 +1,18 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="using:CountTracker2.Common">
+
+    <!--  Application-specific resources  -->
+    <x:String x:Key="AppName">Count 'n Save everything</x:String>
+    <vm:ViewModelLocator xmlns:vm="using:CountTracker2.ViewModel" x:Key="Locator" />
+
+    <Style x:Key="PageBackground" TargetType="Grid">
+        <Setter Property="Background" Value="YellowGreen" />
+    </Style>
+
+    <Style x:Key="BottomAppbarStyle" TargetType="CommandBar">
+        <Setter Property="Background" Value="#FF4DE82B" />
+        <Setter Property="BorderBrush" Value="{x:Null}" />
+    </Style>
+
+</ResourceDictionary>
