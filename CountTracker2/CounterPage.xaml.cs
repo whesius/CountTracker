@@ -78,7 +78,7 @@ namespace CountTracker2
             if (e.Parameter != null)
             {
                 this.Counter = await CountTrackerDataSource.GetCounterAsync((string) e.Parameter);
-                this.pageTitle.Text = Counter.Title;
+                this.PageTitle.Text = Counter.Title;
                 this.ContentRegion.DataContext = this.Counter;
             }
         }
