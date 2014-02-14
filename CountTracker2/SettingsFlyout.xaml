@@ -1,0 +1,71 @@
+﻿<SettingsFlyout x:Class="CountTracker2.CountTrackerSettingsFlyout"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:local="using:CountTracker2"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                Title="Settings"
+                IconSource="Assets/SmallLogo.png"
+                d:DesignWidth="346"
+                mc:Ignorable="d">
+
+    <!--  This StackPanel acts as a root panel for vertical layout of the content sections  -->
+    <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+        <!--  The StackPanel(s) below define individual content sections  -->
+
+        <!--  Content Section 1  -->
+        <StackPanel Style="{StaticResource SettingsFlyoutSectionStyle}">
+
+            <!--  Section 1 header  -->
+            <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="{StaticResource AppName}" />
+
+            <!--  Section 1 body  -->
+            <TextBlock Margin="0,10,0,10"
+                       Style="{StaticResource BodyTextBlockStyle}"
+                       TextWrapping="Wrap">
+                <TextBlock.Text>Units:</TextBlock.Text>
+            </TextBlock>
+            <ScrollViewer Height="300"
+                          HorizontalScrollBarVisibility="Disabled"
+                          VerticalScrollBarVisibility="Auto">
+
+                <ListBox Name="UnitsListBox">
+                    <ListBoxItem Content="Liter" />
+                    <ListBoxItem Content="Meter" />
+                    <ListBoxItem Content="KwH" />
+                    <ListBoxItem Content="Km/h" />
+                    <ListBoxItem Content="Uur" />
+                    <ListBoxItem Content="Minuten" />
+                    <ListBoxItem Content="Seconden" />
+                    <ListBoxItem Content="Kg" />
+                    <ListBoxItem Content="Gram" />
+                    <ListBoxItem Content="Ton" />
+                    <ListBoxItem Content="m³" />
+                    <ListBoxItem Content="m²" />
+                </ListBox>
+            </ScrollViewer>
+
+            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                <Button x:Name="DeleteButton"
+                        Click="DeleteButton_OnClick"
+                        Content="Delete"
+                        Style="{StaticResource FlyoutButton}" />
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <TextBox x:Name="TextBlockUnit"
+                         Width="150"
+                         Margin="25,20,0,20" />
+                <Button x:Name="AddButton"
+                        Click="AddButton_OnClick"
+                        Content="Add"
+                        Style="{StaticResource FlyoutButton}" />
+            </StackPanel>
+
+        </StackPanel>
+
+        <!--  Define more Content Sections below as necessary  -->
+
+    </StackPanel>
+</SettingsFlyout>

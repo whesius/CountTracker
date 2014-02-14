@@ -38,6 +38,22 @@ namespace CountTracker2
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
+
+            Windows.UI.ApplicationSettings.SettingsPane.GetForCurrentView().CommandsRequested += GroupedItemsPage_CommandsRequested;
+        }
+
+        void GroupedItemsPage_CommandsRequested(Windows.UI.ApplicationSettings.SettingsPane sender, Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs args)
+        {
+            Windows.UI.ApplicationSettings.SettingsCommand UnitSetting =
+               new Windows.UI.ApplicationSettings.SettingsCommand("CountTrackerSettingsFlyout", "Units", (handler) =>
+               {
+                   CountTrackerSettingsFlyout settingsFlyout = new CountTrackerSettingsFlyout();
+                   settingsFlyout.Show();
+
+               });
+
+            args.Request.ApplicationCommands.Add(UnitSetting);
+
         }
 
         /// <summary>
