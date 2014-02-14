@@ -1,6 +1,6 @@
 using System;
 
-namespace CountTracker2
+namespace CountTracker2.DataModel
 {
     /// <summary>
     /// Measurement

@@ -6,6 +6,7 @@ using Windows.UI.Xaml.Navigation;
 using CountTracker2.Common;
 
 // The Grouped Items Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234231
+using CountTracker2.DataModel;
 using CountTracker2.ViewModel;
 
 namespace CountTracker2
@@ -17,7 +18,7 @@ namespace CountTracker2
     {
         private readonly ObservableDictionary defaultViewModel = new ObservableDictionary();
         private readonly NavigationHelper navigationHelper;
-
+        
         public MainPage()
         {
             InitializeComponent();
@@ -53,8 +54,9 @@ namespace CountTracker2
                     settingsFlyout.Show();
                 });
 
-
-            args.Request.ApplicationCommands.Add(unitSetting);
+                args.Request.ApplicationCommands.Clear();
+                args.Request.ApplicationCommands.Add(unitSetting);
+            
         }
 
         /// <summary>
@@ -72,9 +74,6 @@ namespace CountTracker2
         /// </param>
         private async void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
-            // TODO: Create an appropriate data model for your problem domain to replace the sample data
-            //var sampleDataGroups = await CountTrackerDataSource.GetCountersAsync();
-            //this.DefaultViewModel["Counters"] = sampleDataGroups;
         }
 
         /// <summary>

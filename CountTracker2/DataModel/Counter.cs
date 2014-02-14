@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 
-namespace CountTracker2
+namespace CountTracker2.DataModel
 {
     /// <summary>
     /// Counter
