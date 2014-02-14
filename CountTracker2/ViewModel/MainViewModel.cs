@@ -1,3 +1,4 @@
+using CountTracker2.DataModel;
 using GalaSoft.MvvmLight;
 using System.Collections.Generic;
 

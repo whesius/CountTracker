@@ -4,6 +4,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
 // The Group Detail Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234229
+using CountTracker2.DataModel;
 
 namespace CountTracker2
 {

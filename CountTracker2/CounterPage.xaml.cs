@@ -4,13 +4,14 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
 // The Item Detail Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234232
+using CountTracker2.DataModel;
 
 namespace CountTracker2
 {
     /// <summary>
     /// A page that displays details for a single item within a group.
     /// </summary>
-    public sealed partial class ItemDetailPage : Page
+    public sealed partial class CounterPage : Page
     {
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
@@ -34,7 +35,7 @@ namespace CountTracker2
             get { return this.defaultViewModel; }
         }
 
-        public ItemDetailPage()
+        public CounterPage()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);

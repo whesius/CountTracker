@@ -11,11 +11,11 @@ namespace CountTracker2
     /// <summary>
     /// A page that displays a grouped collection of items.
     /// </summary>
-    public sealed partial class GroupedItemsPage : Page
+    public sealed partial class MainPage : Page
     {
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
-
+        
         /// <summary>
         /// NavigationHelper is used on each page to aid in navigation and 
         /// process lifetime management
@@ -33,27 +33,27 @@ namespace CountTracker2
             get { return this.defaultViewModel; }
         }
 
-        public GroupedItemsPage()
+        public MainPage()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
-
+            
             Windows.UI.ApplicationSettings.SettingsPane.GetForCurrentView().CommandsRequested += GroupedItemsPage_CommandsRequested;
         }
 
         void GroupedItemsPage_CommandsRequested(Windows.UI.ApplicationSettings.SettingsPane sender, Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs args)
         {
-            Windows.UI.ApplicationSettings.SettingsCommand UnitSetting =
+            var unitSetting =
                new Windows.UI.ApplicationSettings.SettingsCommand("CountTrackerSettingsFlyout", "Units", (handler) =>
                {
-                   CountTrackerSettingsFlyout settingsFlyout = new CountTrackerSettingsFlyout();
+                   var settingsFlyout = new CountTrackerSettingsFlyout();
                    settingsFlyout.Show();
 
                });
 
-            args.Request.ApplicationCommands.Add(UnitSetting);
-
+           
+             args.Request.ApplicationCommands.Add(unitSetting);
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace CountTracker2
 
             // Navigate to the appropriate destination page, configuring the new page
             // by passing required information as a navigation parameter
-            this.Frame.Navigate(typeof(GroupDetailPage), ((Counter)counter).UniqueId);
+            this.Frame.Navigate(typeof(CounterPage), ((Counter)counter).UniqueId);
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace CountTracker2
             // by passing required information as a navigation parameter
             var itemId = ((Counter)e.ClickedItem).UniqueId;
             
-            this.Frame.Navigate(typeof(ItemDetailPage), itemId);
+            this.Frame.Navigate(typeof(CounterPage), itemId);
         }
 
         #region NavigationHelper registration

@@ -1,30 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using Windows.Data.Json;
 using Windows.Storage;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Media.Imaging;
 
-// The data model defined by this file serves as a representative example of a strongly-typed
-// model.  The property names chosen coincide with data bindings in the standard item templates.
-//
-// Applications may use this model as a starting point and build on it, or discard it entirely and
-// replace it with something appropriate to their needs. If using this model, you might improve app 
-// responsiveness by initiating the data loading task in the code behind for App.xaml when the app 
-// is first launched.
-
-namespace CountTracker2
+namespace CountTracker2.DataModel
 {
-    /// <summary>
-    /// Creates a collection of groups and items with content read from a static json file.
-    /// 
-    /// SampleDataSource initializes with data read from a static json file included in the 
-    /// project.  This provides sample data at both design-time and run-time.
-    /// </summary>
     public sealed class CountTrackerDataSource
     {
         private static CountTrackerDataSource _countTrackerDataSource = new CountTrackerDataSource();
